@@ -38,6 +38,8 @@ class Block {
   }
 
   static adjustDifficulty({ originalBlock, timestamp }) {
+    if (!originalBlock || typeof originalBlock.difficulty !== "number") {
+        throw new Error("Invalid block passed to adjustDifficulty()");
     const { difficulty } = originalBlock;
 
     if (difficulty < 1) return 1;
