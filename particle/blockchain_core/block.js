@@ -51,3 +51,19 @@ class Block {
     return difficulty + 1;
   }
 }
+
+
+
+module.exports = Block;
+
+if (require.main === module) {
+  const genesisBlock = Block.genesis();
+  console.log("Genesis Block:", genesisBlock);
+
+  const minedBlock = Block.mineBlock({ lastBlock: genesisBlock, data: "test-data" });
+  console.log("Mined Block:", minedBlock);
+
+  console.log("Difficulty adjusted to:", Block.adjustDifficulty({
+    originalBlock: minedBlock,
+    timestamp: Date.now() + 6000
+  }));
