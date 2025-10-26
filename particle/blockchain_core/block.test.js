@@ -21,6 +21,14 @@ describe('Block', () => {
   } catch (error) {
     throw new Error(`Block constructor failed: ${error.message}`);
   }
+    it('has a timestamp, lastHash, hash, and a data property', () => {
+    expect(block.timestamp).toEqual(timestamp);
+    expect(block.lastHash).toEqual(lastHash);
+    expect(block.hash).toEqual(hash);
+    expect(block.data).toEqual(data);
+    expect(block.nonce).toEqual(nonce);
+    expect(block.difficulty).toEqual(difficulty);
+  });
  
   it('creates a valid Block instance', () => {
     expect(block).toBeInstanceOf(Block);
@@ -42,6 +50,10 @@ describe('Block', () => {
     
     it('returns a Block instance', () => {
       expect(genesisBlock instanceof Block).toBe(true);
+    });
+
+    it('returns the genesis data', () => {
+      expect(genesisBlock).toEqual(genesis_configuration);
     });
     
     it('has valid genesis block structure', () => {
@@ -73,6 +85,10 @@ describe('Block', () => {
     
     it('returns a Block instance', () => {
       expect(minedBlock instanceof Block).toBe(true);
+    });
+
+    it('sets the `lastHash` to be the `hash` of the lastBlock', () => {
+      expect(minedBlock.lastHash).toEqual(lastBlock.hash);
     });
         
     it('sets the `data`', () => {
@@ -157,3 +173,4 @@ describe('Block', () => {
 });
 
 module.exports = { Block };
+
