@@ -64,6 +64,13 @@ describe('Blockchain', () => {
       it('returns false for empty chain', () => {
         expect(Blockchain.isValidChain([])).toBe(false);
       });
+
+      it('returns false when lastHash reference is changed', () => {
+        blockchain.addBlock({ data: 'data1' });
+        blockchain.addBlock({ data: 'data2' });
+        blockchain.chain[2].lastHash = 'data3';
+        expect(Blockchain.isValidChain(blockchain.chain)).toBe(false);
+      });
       
       it('returns false when block contains invalid field', () => {
         blockchain.addBlock({ data: 'data1' });
@@ -243,3 +250,4 @@ describe('Blockchain', () => {
 });
 
 module.exports = { Blockchain, Block, Wallet, Transaction };
+
