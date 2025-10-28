@@ -170,6 +170,14 @@ describe('Block', () => {
       expect(adjusted).toEqual(1);
     });
     
+    it('has a lower limit of 1', () => {
+      testBlock.difficulty = -1;
+      expect(Block.adjustDifficulty({ originalBlock: testBlock })).toEqual(1);
+      
+      testBlock.difficulty = 0;
+      expect(Block.adjustDifficulty({ originalBlock: testBlock })).toEqual(1);
+    });
+    
     it('handles missing timestamp parameter', () => {
       const currentTime = Date.now();
       const adjusted = Block.adjustDifficulty({ originalBlock: testBlock });
@@ -179,5 +187,6 @@ describe('Block', () => {
 });
 
 module.exports = { Block };
+
 
 
