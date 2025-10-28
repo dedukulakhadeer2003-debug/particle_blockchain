@@ -94,6 +94,12 @@ describe('Block', () => {
     it('sets the `data`', () => {
       expect(minedBlock.data).toEqual(data);
     });
+
+    it('sets a `timestamp`', () => {
+      expect(minedBlock.timestamp).not.toEqual(undefined);
+      expect(typeof minedBlock.timestamp).toBe('number');
+      expect(minedBlock.timestamp).toBeGreaterThan(0);
+    });
       
     it('creates a SHA-256 `hash` based on the proper inputs', () => {
       expect(minedBlock.hash)
@@ -173,4 +179,5 @@ describe('Block', () => {
 });
 
 module.exports = { Block };
+
 
