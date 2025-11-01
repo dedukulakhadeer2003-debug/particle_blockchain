@@ -103,6 +103,12 @@ describe('Blockchain', () => {
         blockchain.addBlock({ data: 'data3' });
         expect(Blockchain.isValidChain(blockchain.chain)).toBe(true);
       });
+
+       it('returns true for chain with only genesis block', () => {
+        const singleBlockChain = [Block.genesis()];
+        expect(Blockchain.isValidChain(singleBlockChain)).toBe(true);
+      });
+      
     });
   });
 
@@ -250,4 +256,5 @@ describe('Blockchain', () => {
 });
 
 module.exports = { Blockchain, Block, Wallet, Transaction };
+
 
