@@ -212,6 +212,13 @@ describe('Blockchain', () => {
         expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(true);
         expect(errorMock).not.toHaveBeenCalled();
       });
+
+      it('returns true for empty data array', () => {
+        newChain.addBlock({ data: [] });
+        expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(true);
+        expect(errorMock).not.toHaveBeenCalled();
+      });
+      
     });
     
     describe('Invalid transaction data', () => {
@@ -260,6 +267,7 @@ describe('Blockchain', () => {
 });
 
 module.exports = { Blockchain, Block, Wallet, Transaction };
+
 
 
 
