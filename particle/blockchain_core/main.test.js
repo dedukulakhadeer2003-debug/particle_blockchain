@@ -164,6 +164,10 @@ describe('Blockchain', () => {
       it('replaces the chain', () => {
         expect(blockchain.chain).toEqual(newChain.chain);
       });
+
+      it('logs about the chain replacement', () => {
+        expect(logMock).toHaveBeenCalled();
+      });
       
       it('has the correct length after replacement', () => {
         expect(blockchain.chain.length).toBe(newChain.chain.length);
@@ -256,5 +260,6 @@ describe('Blockchain', () => {
 });
 
 module.exports = { Blockchain, Block, Wallet, Transaction };
+
 
 
