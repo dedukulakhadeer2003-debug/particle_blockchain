@@ -234,6 +234,13 @@ describe('Blockchain', () => {
         expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false);
         expect(errorMock).toHaveBeenCalled();
       });
+
+      it('returns false for malformed outputMap in reward transaction', () => {
+        rewardTransaction.outputMap[wallet.publicKey] = 999999;
+        newChain.addBlock({ data: [transaction, rewardTransaction] });
+        expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false);
+        expect(errorMock).toHaveBeenCalled();
+      });
       
       it('returns false for malformed input', () => {
         wallet.balance = 9000;
@@ -267,6 +274,7 @@ describe('Blockchain', () => {
 });
 
 module.exports = { Blockchain, Block, Wallet, Transaction };
+
 
 
 
