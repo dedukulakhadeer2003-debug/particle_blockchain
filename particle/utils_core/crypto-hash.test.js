@@ -24,6 +24,12 @@ describe('cryptoHash()', () => {
     expect(typeof emptyHash).toBe('string');
     expect(emptyHash.length).toBeGreaterThan(0);
   });
+  
+ it('handles null input consistently', () => {
+    const nullHash = cryptoHash(null);
+    expect(typeof nullHash).toBe('string');
+    expect(nullHash).toEqual(cryptoHash(null));
+  });
 
   it('produces same hash for identical inputs regardless of duplication', () => {
     const hash1 = cryptoHash('test', 'test');
@@ -32,4 +38,5 @@ describe('cryptoHash()', () => {
     expect(typeof hash2).toBe('string');
   });
 });
+
 
