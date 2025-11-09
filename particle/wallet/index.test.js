@@ -79,6 +79,10 @@ describe('Wallet', () => {
         transaction = wallet.createTransaction({ amount, recipient });
       });
 
+      it('creates an instance of `Transaction`', () => {
+        expect(transaction instanceof Transaction).toBe(true);
+      });
+
       it('matches the transaction input with the wallet', () => {
         expect(transaction.input.address).toEqual(wallet.publicKey);
       });
@@ -204,4 +208,5 @@ describe('Wallet', () => {
     });
   });
 });
+
 
