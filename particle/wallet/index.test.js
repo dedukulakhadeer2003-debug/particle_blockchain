@@ -87,6 +87,10 @@ describe('Wallet', () => {
         expect(transaction.input.address).toEqual(wallet.publicKey);
       });
 
+      it('outputs the amount to the recipient', () => {
+        expect(transaction.outputMap[recipient]).toEqual(amount);
+      });
+
       it('deducts the amount from sender balance', () => {
         expect(transaction.outputMap[wallet.publicKey]).toEqual(wallet.balance - amount);
       });
@@ -208,5 +212,6 @@ describe('Wallet', () => {
     });
   });
 });
+
 
 
