@@ -39,6 +39,15 @@ describe('Wallet', () => {
     });
     });
 
+   it('does not verify an invalid signature', () => {
+      expect(
+        verifySignature({
+          publicKey: wallet.publicKey,
+          data,
+          signature: new Wallet().sign(data)
+        })
+      ).toBe(false);
+
     it('handles object data signing', () => {
       const objectData = { message: 'test', value: 123 };
       const signature = wallet.sign(objectData);
@@ -195,3 +204,4 @@ describe('Wallet', () => {
     });
   });
 });
+
