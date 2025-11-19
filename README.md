@@ -17,15 +17,10 @@ It serves as a controlled environment for studying PoW behavior, validating secu
 The project enables you to:
 
 Measure the performance of custom PoW execution loops, including optimized nonce-range division
-
 Observe how difficulty adjusts under fast or delayed mining intervals
-
 Benchmark mining throughput, hash distribution quality, and segmented-nonce mining strategies
-
 Stress-test consensus logic by altering validation paths, timing rules, or hashing constraints
-
 Safely extend or break chain components to analyze behavior under extreme edge-cases
-
 Prototype digital-asset or application-layer features on top of a secure, fully validated PoW backbone
 
 The system incorporates the full set of chain-integrity protections used in PoW networks — parent-hash verification, difficulty gating, deterministic hashing, and block-level security checks — all of which have been validated through performance and stability tests.
@@ -34,11 +29,49 @@ Each module is isolated, allowing independent modification of mining logic, diff
 
 
 
-## 🛠️ Getting Started
-1. Fork this repo
-2. Clone your fork
-3. Create a branch
-4. Make changes and submit a pull request
+
+## Getting Started
+
+Run:
+( Linux)
+git clone <your-repo-url>
+cd particle-blockchain
+npm install
+npm test          # run all consensus tests
+node index.js     # start mining / running the chain
+
+( Windows)
+git clone <your-repo-url>
+cd particle-blockchain
+npm install
+npm test     
+node index.js 
+
+
+#Useful entry points:
+
+blockchain_core/ → mining & chain logic
+utils_core/ → hashing and helper utilities
+wallet/ → mempool + transaction flow
+application_backend/ → P2P flow (if enabled)
+
+
+
+## Tests
+
+All essential behaviors are verified through automated tests:
+
+PoW loop
+Difficulty reaction
+Block validation
+Hash correctness
+Chain integrity rules
+Tests ensure the system is predictable, stable, and safe to modify for experiments.
+
+Run:
+npm test
+
+
 
 ## 🤝 Contributing
 We welcome contributions of all kinds – from fixing bugs, adding documentation, to developing core features.  
