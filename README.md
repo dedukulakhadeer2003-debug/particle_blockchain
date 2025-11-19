@@ -1,6 +1,9 @@
 # Particle Blockchain 
 
-An open-source experimental blockchain project for research, learning, and contributions.
+This repository contains a fully test-driven, modular Proof-of-Work blockchain implementation built for research, benchmarking, and experimentation with mining-efficiency improvements.
+
+The core idea behind this implementation is to analyze and enhance PoW performance by restructuring nonce-search behavior and dynamically adjusting difficulty using fine-grained timing signals. This allows controlled testing of how block-generation time reacts to different consensus-layer parameters.
+
 
 ##  Goals
 
