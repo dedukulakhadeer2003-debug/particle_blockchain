@@ -69,15 +69,19 @@ node index.js
 
 All essential behaviors are verified through automated tests:
 
-PoW loop
-Difficulty reaction
-Block validation
-Hash correctness
-Chain integrity rules
+- PoW loop  
+- Difficulty reaction  
+- Block validation  
+- Hash correctness  
+- Chain integrity rules  
+
 Tests ensure the system is predictable, stable, and safe to modify for experiments.
 
 Run:
+```
 npm test
+```
+
 
 
 
