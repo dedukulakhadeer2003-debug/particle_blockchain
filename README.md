@@ -32,14 +32,15 @@ Each module is isolated, allowing independent modification of mining logic, diff
 
 ## Getting Started
 
-Run:
-( Linux)
+### Run (Linux)
 
+```bash
 git clone <your-repo-url>
 cd particle-blockchain
 npm install
 npm test
 node index.js
+```
 
 
 npm test          # run all consensus tests
