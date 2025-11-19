@@ -51,12 +51,13 @@ npm test
 node index.js
 ```
 
-#Useful entry points:
+### Useful entry points
 
-blockchain_core/ → mining & chain logic
-utils_core/ → hashing and helper utilities
-wallet/ → mempool + transaction flow
-application_backend/ → P2P flow (if enabled)
+- **blockchain_core/** → mining and chain logic  
+- **utils_core/** → hashing utilities and low-level helpers  
+- **wallet/** → mempool handling and transaction workflow  
+- **application_backend/** → optional P2P network layer  
+
 
 
 
