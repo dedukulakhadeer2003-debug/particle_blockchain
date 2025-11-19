@@ -19,12 +19,13 @@ It serves as a controlled environment for studying PoW behavior, validating secu
 
 The project enables you to:
 
-Measure the performance of custom PoW execution loops, including optimized nonce-range division
-Observe how difficulty adjusts under fast or delayed mining intervals
-Benchmark mining throughput, hash distribution quality, and segmented-nonce mining strategies
-Stress-test consensus logic by altering validation paths, timing rules, or hashing constraints
-Safely extend or break chain components to analyze behavior under extreme edge-cases
-Prototype digital-asset or application-layer features on top of a secure, fully validated PoW backbone
+- Measure the performance of custom PoW execution loops, including optimized nonce-range division  
+- Observe how difficulty adjusts under fast or delayed mining intervals  
+- Benchmark mining throughput, hash-distribution quality, and segmented-nonce mining strategies  
+- Stress-test consensus logic by altering validation paths, timing rules, or hashing constraints  
+- Safely extend or break chain components to analyze behavior under extreme edge-cases  
+- Prototype digital-asset or application-layer features on top of a secure, fully validated PoW backbone  
+
 
 The system incorporates the full set of chain-integrity protections used in PoW networks — parent-hash verification, difficulty gating, deterministic hashing, and block-level security checks — all of which have been validated through performance and stability tests.
 
