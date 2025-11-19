@@ -34,6 +34,7 @@ Each module is isolated, allowing independent modification of mining logic, diff
 
 Run:
 ( Linux)
+
 git clone <your-repo-url>
 cd particle-blockchain
 npm install
