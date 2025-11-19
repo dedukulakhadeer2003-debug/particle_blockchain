@@ -1,4 +1,4 @@
-# Particle Blockchain 🚀
+# Particle Blockchain 
 
 An open-source experimental blockchain project for research, learning, and contributions.
 
