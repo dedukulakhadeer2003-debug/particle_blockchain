@@ -138,6 +138,12 @@ describe('Wallet', () => {
         transactionOne = new Wallet().createTransaction({
           recipient: wallet.publicKey,
           amount: 50
+          
+        });
+
+        transactionTwo = new Wallet().createTransaction({
+          recipient: wallet.publicKey,
+          amount: 60
         });
 
         blockchain.addBlock({ data: [transactionOne, transactionTwo] });
@@ -212,6 +218,7 @@ describe('Wallet', () => {
     });
   });
 });
+
 
 
 
