@@ -38,21 +38,18 @@ Each module is isolated, allowing independent modification of mining logic, diff
 git clone <your-repo-url>
 cd particle-blockchain
 npm install
-npm test
-node index.js
-```
-
-
 npm test          # run all consensus tests
 node index.js     # start mining / running the chain
+```
+### Run (Windows)
 
-( Windows)
+```powershell
 git clone <your-repo-url>
 cd particle-blockchain
 npm install
-npm test     
-node index.js 
-
+npm test
+node index.js
+```
 
 #Useful entry points:
 
