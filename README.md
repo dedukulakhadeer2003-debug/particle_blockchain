@@ -36,7 +36,9 @@ Run:
 ( Linux)
 
 git clone <your-repo-url>
+
 cd particle-blockchain
+
 npm install
 npm test          # run all consensus tests
 node index.js     # start mining / running the chain
