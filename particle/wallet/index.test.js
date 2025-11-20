@@ -172,6 +172,16 @@ describe('Wallet', () => {
 
           blockchain.addBlock({ data: [recentTransaction] });
         });
+
+        it('returns the output amount of the recent transaction', () => {
+          expect(
+            Wallet.calculateBalance({
+              chain: blockchain.chain,
+              address: wallet.publicKey
+            })
+          ).toEqual(recentTransaction.outputMap[wallet.publicKey]);
+        });
+        
         describe('and there are outputs next to and after the recent transaction', () => {
           let sameBlockTransaction, nextBlockTransaction;
 
@@ -218,6 +228,7 @@ describe('Wallet', () => {
     });
   });
 });
+
 
 
 
