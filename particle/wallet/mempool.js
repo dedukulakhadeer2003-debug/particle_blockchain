@@ -28,6 +28,18 @@ class TransactionPool {
       transaction => transaction && Transaction.validTransaction(transaction)
     );
   }
+  clearBlockchainTransactions({ chain }) {
+    if (!chain || !Array.isArray(chain)) return;
+    for (let i = 1; i < chain.length; i++) {
+      const block = chain[i];
+      if (!block || !block.data) continue;
+      for (let transaction of block.data) {
+        if (transaction && transaction.id && this.transactionMap[transaction.id]) {
+          delete this.transactionMap[transaction.id];
+        }
+      }
+    }
+  }
    hasTransaction(transactionId) {
     return !!this.transactionMap[transactionId];
   }
@@ -39,3 +51,4 @@ class TransactionPool {
 }
 
 module.exports = TransactionPool;
+
