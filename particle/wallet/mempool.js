@@ -40,6 +40,10 @@ class TransactionPool {
       }
     }
   }
+  
+  getTransactionCount() {
+    return Object.keys(this.transactionMap).length;
+  }
    hasTransaction(transactionId) {
     return !!this.transactionMap[transactionId];
   }
@@ -51,4 +55,5 @@ class TransactionPool {
 }
 
 module.exports = TransactionPool;
+
 
